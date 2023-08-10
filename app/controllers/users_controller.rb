@@ -16,14 +16,23 @@ class UsersController < ApplicationController
     end
   end
 
+
   def show
     @user = User.find(params[:id])
+
   end
 
   def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to users_path, notice: "自己紹介を編集しました！"
+    else
+      render :edit
+    end
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def destroy
