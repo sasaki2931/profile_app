@@ -1,13 +1,19 @@
-<<table>
+<table>
   <tr>
     <th>自己紹介</th>
+    <th>スキル</th>
   </tr>
 
-<% @users.each do |blog| %>
+
+
+<% @users.each do |user| %>
   <tr>
+    <td><%= gravatar_for @user %></td>
     <td><%= user.introduce %></td>
-    <td><%= link_to "自己紹介を編集する", edit_user_path(blog.id) %></td>
+
+    <td><%= link_to "自己紹介を編集する", edit_user_path(user.id) %></td>
   </tr>
+
 <% end %>
 </table>
 
