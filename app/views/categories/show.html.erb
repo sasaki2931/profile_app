@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>カテゴリー</th>
+    <th></th>
+  </tr>
+
+
+
+<% @categories.each do |user| %>
+  <tr>
+    <td><%= category.name %></td>
+    <td><%= link_to 'ブログを削除する', category_path(category.id), method: :delete %></td>
+  </tr>
+<% end %>
+<td><%= link_to "カテゴリーを追加する", new_category_path(user.id) %></td>
+</table>
+
