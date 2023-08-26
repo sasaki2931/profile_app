@@ -46,6 +46,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_101737) do
   end
 
   create_table "skills", force: :cascade do |t|
+    t.string "name"
+    t.integer "level"
     t.integer "user_id", null: false
     t.integer "category_id", null: false
     t.datetime "created_at", null: false

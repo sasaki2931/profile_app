@@ -82,6 +82,14 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    carrierwave (3.0.3)
+      activemodel (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      addressable (~> 2.6)
+      image_processing (~> 1.1)
+      marcel (~> 1.0.0)
+      ssrf_filter (~> 1.0)
+    chartkick (5.0.3)
     coderay (1.1.3)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
@@ -196,6 +204,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.3-x86_64-linux)
+    ssrf_filter (1.1.1)
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     thor (1.2.2)
@@ -230,11 +239,14 @@ DEPENDENCIES
   bcrypt
   bootsnap
   capybara
+  carrierwave
+  chartkick
   debug
   faker (= 2.21.0)
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
+  mini_magick
   pry-rails
   puma (~> 5.0)
   rails (~> 7.0.4)

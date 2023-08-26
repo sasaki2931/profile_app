@@ -32,6 +32,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+
   end
 
 
@@ -39,7 +40,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                 :password_confirmation,:image,:introduce)
+                                 :password_confirmation,:image,:image_cache,:introduce)
     end
 
 

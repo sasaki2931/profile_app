@@ -1,21 +1,30 @@
-<table>
-  <tr>
-    <th>自己紹介</th>
-    <th>スキル</th>
-  </tr>
+<div class ="image">
+　<p>
+  <% if @user.image.present? %>
+  　　<%= image_tag @user.image.url,class: "rounded-circle", size: "300x300" %>
+　<% else %>
+    <%= image_tag "gray.jpg",class: "rounded-circle", size: "300x300" %>
+　<% end %>
+  </p>
+</div>
+<div class="profile">
+    <h1>自己紹介</h1>
+  <% @users.each do |user| %>
+    <div class="user-info">
+      <tr>
+        <% if user.introduce.blank? %>
+         <P>ここに自己紹介を表示する、ここに自己紹介を表示する、ここに自己紹介を表示する、ここに自己紹介を表示する,
+         ここに自己紹介を表示する<p>
+        <else>
+          <td><%= user.introduce %></td>
+        <% end %>
+        <td><%= button_to "自己紹介を編集する", edit_user_path(user),method: :get,class: "edit-button" %></td>
+      </tr>
+    </div>
+  <% end %>
+</div>
+
+<div class = "skill">
 
 
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%= gravatar_for @user %></td>
-    <td><%= user.introduce %></td>
-
-    <td><%= link_to "自己紹介を編集する", edit_user_path(user.id) %></td>
-  </tr>
-
-<% end %>
-</table>
-
-
-
+</div>

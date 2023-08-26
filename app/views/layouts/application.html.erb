@@ -13,16 +13,20 @@
 
   <body>
    <header>
-  　　<nav>
+      <h1 class= "title">My profile</h1>
+  　　<nav class = "nav">
+  　　<ul class = "button">
+
     　　<% if logged_in? %>
-      　　<div class="logout-button">
+      　　<li class="button-menu">
         　　<%= button_to "Logout", session_path(current_user.id), method: :delete %>
-      　</div>
+      　   </li>
     　　<% else %>
-      　　<div class="login-button">
+      　　<li class="button-menu">
         　　<%= button_to "Login", new_session_path, method: :get %>
-      　　</div>
+      　　</li>
     　　<% end %>
+    　　 </ul>
   　　</nav>
 　 </header>
     <% flash.each do |key, value| %>
