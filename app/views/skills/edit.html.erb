@@ -1,13 +1,14 @@
-<% @categories.name.each do |categoriy| %>
+
+<table>
   <tr>
-    <h2><%= category.name %></h2>
-    <td><%= link_to 'スキルを追加する', skill_path(skill.id), method: :delete %></td>
+    <th>タイトル</th>
+    <th>テーマ</th>
   </tr>
-  <tr>
-    <td>習得スキル</td>　<td>習得レベル</td>
-    <td>categoriy.skill.name</td> <td>categoriy.skill.lebel</td>
-  </tr>
+
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.name %></td>
+
+
 <% end %>
 </table>
-
-

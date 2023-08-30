@@ -21,9 +21,7 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
-gem 'chartkick'
 
-gem "groupdate"
 
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]

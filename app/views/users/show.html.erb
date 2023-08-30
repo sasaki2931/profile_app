@@ -1,9 +1,10 @@
+<div class = "show">
 <div class ="image">
 　<p>
   <% if @user.image.present? %>
-  　　<%= image_tag @user.image.url,class: "rounded-circle", size: "300x300" %>
+  　　<%= image_tag @user.image.url,class: "rounded-circle", size: "360x360" %>
 　<% else %>
-    <%= image_tag "gray.jpg",class: "rounded-circle", size: "300x300" %>
+    <%= image_tag "gray.jpg",class: "rounded-circle", size: "360x360" %>
 　<% end %>
   </p>
 </div>
@@ -25,6 +26,56 @@
 </div>
 
 <div class = "skill">
+  <div class = "skill-body">
+    <div class = "skill-head">
+      <h2>スキルチャート</h2>
+　  </div>
+　  <td><%= button_to "スキルを編集する", edit_skill_path(@user),method: :get,class: "edit-skill-button" %></td>
+  </div>
+</div>
+</div>
+</div>
 
+<div class="chart-container">
+  <canvas id="barChart"></canvas>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let barCtx = document.getElementById("barChart");
 
+      // ダミーデータの代わりに、提供されたデータを使用
+      let months = ['先々月', '先月', '今月'];
+
+      // 各カテゴリのIDを取得
+
+      let barConfig = {
+        type: 'bar',
+        data: {
+          labels: months,
+          datasets: [{
+            label: 'フロントエンド',
+            data: frontendData,
+            backgroundColor: '#f88',
+          }, {
+            label: 'バックエンド',
+            data: backendData,
+            backgroundColor: '#484',
+          }, {
+            label: 'インフラ',
+            data: infraData,
+            backgroundColor: '#48f',
+          }],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              suggestedMax: 100,  // 最大値の設定
+            },
+          },
+        },
+      };
+
+      let barChart = new Chart(barCtx, barConfig);
+    });
+  </script>
 </div>

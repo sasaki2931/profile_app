@@ -21,6 +21,8 @@ class UsersController < ApplicationController
 
   def show
     @users = User.all
+    @user_skills = @user.skills
+    #binding.pry
   end
 
   def update

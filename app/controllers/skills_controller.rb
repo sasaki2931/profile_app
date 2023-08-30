@@ -1,13 +1,12 @@
 class SkillsController < ApplicationController
-   before_action :set_user, only: [:edit, :update]
-
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   def new
     @skill = Skill.new
   end
 
   def create
-    @skill = Skill.create(category_params)
+    @skill = Skill.create(skill_params)
     if @skill.save
       redirect_to skill_path(@skill.id)
     else
@@ -20,30 +19,27 @@ class SkillsController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
-      redirect_to users_path, notice: "自己紹介を編集しました！"
+    if @skill.update(skill_params)
+      redirect_to users_path, notice: "スキルを編集しました！"
     else
       render :edit
     end
   end
 
-
-  def destrroy
-     @category.destroy
-     redirect_to categories_path, notice:"ブログを削除しました！"
+  def destroy
+    @skill.destroy
+    redirect_to categories_path, notice: "スキルを削除しました！"
   end
-
-
 
   private
 
-    def skill_params
-      params.require(:skill).permit(:name, :level )
-    end
+  def skill_params
+    params.require(:skill).permit(:name, :level, :category_id)
+  end
 
-
-    def set_user
-      @user = User.find(params[:id])
-    end
-
+  def set_user
+    @user = User.find(params[:id])
+    @categories = Category.all
+    @skill = Skill.find(params[:id]) if params[:id]
+  end
 end

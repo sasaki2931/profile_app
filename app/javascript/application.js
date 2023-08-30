@@ -2,5 +2,3 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-//= require chartkick
-//= require Chart.bundle

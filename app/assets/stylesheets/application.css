@@ -1,7 +1,9 @@
 html {
     font-size: 62.5%;
-    height: 1024px;
-    width: 1440px
+    height: 1531px;
+    width: 1440px;
+    position: relative;
+
   }
 
   body {
@@ -47,20 +49,25 @@ footer {
 
 
 
-
+.show{
+  width: 1,440px;
+  height: 811px;
+  background-color: #ccc;
+  position: relative;
+}
 
 
 
 .image{
-  height:30%;
+  height:390px;
   width: 45%;
   float: left;
   margin-right: 10px;
-
+  background-color: #ccc;
 }
 
 .profile{
-  height:30%;
+  height:390px;
   width: 50%;
   float: right;
 }
@@ -98,8 +105,58 @@ footer {
   text-align: center;
 }
 
+.skill {
+  position: absolute;
+  width: 960px ;
+  height: 331px ;
+  gap: 80px ;
+  background-color: #ccc;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  text-align: center;
 
+}
 
+.skill-body{
+  position:relative;
+  height:151px;
+  width:400px;
+  margin:auto;
+}
+
+.skill-head{
+  height:58px;
+  width:400px;
+  border-bottom: 1px solid #000000;
+}
+
+.skill-head h2{
+  font-size: 36px;
+
+}
+
+.edit-skill-button{
+  position: absolute;
+  height:53px;
+  width:144px;
+  background-color: #1B5678;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  border-radius: 4px;
+  color:#FFF;
+}
+
+.chart-container{
+  position: absolute;
+  height:572.5px;
+  width: 1081px;
+  top:877px;
+  left:193px;
+}
 
 
 
