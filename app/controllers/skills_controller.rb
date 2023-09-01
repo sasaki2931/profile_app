@@ -1,8 +1,8 @@
 class SkillsController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :destroy]
 
   def new
     @skill = Skill.new
+
   end
 
   def create
@@ -15,31 +15,42 @@ class SkillsController < ApplicationController
   end
 
   def edit
-
+    @user = User.find(params[:id])
+    @categories = Category.all
+    @skill = Skill.find(params[:id]) if params[:id]
+    @frontend = Category.find_by(name: "フロントエンド")&.skills
+    @backend = Category.find_by(name: "バックエンド")&.skills
+    @infra = Category.find_by(name: "インフラ")&.skills
   end
 
   def update
-    if @skill.update(skill_params)
-      redirect_to users_path, notice: "スキルを編集しました！"
+    @categories = Category.all
+    @skill = Skill.find(params[:id]) if params[:id]
+    if @skill.update(update_params)
+      binding.pry
+      redirect_to users_path, notice: "スキルを保存しました！"
     else
+
       render :edit
     end
   end
 
   def destroy
+      @categories = Category.all
+      @skill = Skill.find(params[:id]) if params[:id]
     @skill.destroy
     redirect_to categories_path, notice: "スキルを削除しました！"
   end
 
   private
 
-  def skill_params
-    params.require(:skill).permit(:name, :level, :category_id)
-  end
+    def skill_params
+      params.require(:skill).permit(:name, :level, :category_id)
+    end
 
-  def set_user
-    @user = User.find(params[:id])
-    @categories = Category.all
-    @skill = Skill.find(params[:id]) if params[:id]
-  end
+    def update_params
+      params.require(:skill).permit(:level)
+    end
+
+
 end

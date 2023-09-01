@@ -1,14 +1,35 @@
+<div class = "skill-container">
 
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>テーマ</th>
-  </tr>
+<!-- 同じようにフロントエンドとインフラのスキルも記述 -->
 
-  <% @categories.each do |category| %>
+<!-- フロントエンドのスキル -->
+<div class="skill-category">
+  <div class="skill-card">
+ <div class="skill-table-head">
+    <span class="left">フロントエンド</span>
+    <span class="right">
+      <%= button_to "スキルを追加する", new_skill_path(@skill), method: :get, class: "skill-button" %>
+    </span>
+  </div>
+  <table class="skill-table">
+  <tbody>
     <tr>
-      <td><%= category.name %></td>
+      <th class="header2">習得スキル</th>
+      <th class="header2">習得レベル</th>
+    </tr>
+   <% @infra.each do |skill| %>
+  　　<tr>
+   　　 <td><%= skill.name %></td>
+    　 <%= form_with model: @skill, url: skill_path(@skill), method: :patch, local: true do |f| %>
+         <td><%= f.select :level, (1..100).to_a, selected: skill.level %></td>
+         <td><%= f.submit "習得レベルを更新する",class: "update-button", data: { confirm: "本当に削除しますか?" }  %></td>
+       <% end %>
+          <td><%= button_to "スキルを削除する", skill_path(@skill), method: :delete, class: "delete-button", data: { confirm: "本当に削除しますか？" } %></td>
 
-
-<% end %>
+   <% end %>
+  </tbody>
 </table>
+</div>
+</div>
+
+</div>
