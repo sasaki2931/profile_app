@@ -4,3 +4,34 @@ import "controllers"
 
  import jquery from "jquery"
  window.$ = jquery
+
+
+ $(function() {
+
+  // .delete-buttonがクリックされたらモーダルウィンドウを表示
+  $("#modal-open-update").on('click', function(){
+
+      // #modal-overlayをフェードイン(display: none; → block;)させる
+      $("#modal-overlay-update").fadeIn("fast");
+
+  });
+
+
+  $("#modal-open-delete").on('click', function(){
+
+      // #modal-overlayをフェードイン(display: none; → block;)させる
+      $("#modal-overlay-delete").fadeIn("fast");
+
+  });
+
+
+
+  // .back-buttonか#modal-overlayがクリックされたらモーダルウィンドウを削除
+   $("#modal-close, #modal-update-overlay, #modal-delete-overlay").on('click', function(){
+    $("#modal-update-overlay, #modal-delete-overlay").fadeOut("fast");
+  });
+
+
+
+});
+

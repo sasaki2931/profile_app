@@ -375,16 +375,191 @@ tbody{
 }
 
 .delete-button{
+  display: block;
   width: 172px;
   height: 32px;
   background-color: #EE6969;
   color: #fff;
   border-radius: 4px;
   border:none;
+  font-size: 14px;
+  line-height: 32px;
+
 }
 
 select{
   width: 160px;
   height: 40px;
   gap:10px;
+}
+
+
+
+
+
+
+
+
+
+#modal-overlay-update {
+  display: none;  /* デフォルトは非表示 */
+  z-index: 1;      /* モーダルウィンドウと通常画面の間に表示 */
+  position: fixed; /* 表示を固定してスクロールで動かさない */
+  top: 0;          /* 全画面表示なので0 */
+  left: 0;         /* 全画面表示なので0 */
+  width: 100%;     /* 全画面表示なので100% */
+  height: 100%;    /* 全画面表示なので100%。スマートフォンでの表示対応する場合は120%に */
+  background-color: rgba(0,0,0,0.75); /* 背景を黒の半透明に */
+}
+
+#modal-overlay-delete {
+  display: none;  /* デフォルトは非表示 */
+  z-index: 1;      /* モーダルウィンドウと通常画面の間に表示 */
+  position: fixed; /* 表示を固定してスクロールで動かさない */
+  top: 0;          /* 全画面表示なので0 */
+  left: 0;         /* 全画面表示なので0 */
+  width: 100%;     /* 全画面表示なので100% */
+  height: 100%;    /* 全画面表示なので100%。スマートフォンでの表示対応する場合は120%に */
+  background-color: rgba(0,0,0,0.75); /* 背景を黒の半透明に */
+}
+
+
+
+#modal-content {
+  z-index: 2;      /* 最前面に表示 */
+  position: fixed; /* 表示位置を固定 */
+  top: 50%;        /* 画面中央に表示 */
+  left: 50%;       /* 画面中央に表示 */
+  transform: translate(-50%, -50%); /* モーダルウィンドウの大きさ分中央にずらす */
+  /* 以下はモーダルウィンドウの外観。ご自由に */
+  width: 640px;
+  height:240px;
+  margin: 1.5em auto 0;
+  padding: 10px 20px;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.modal-message {
+  text-align: center;
+  font-size:18px;
+  padding-top: 24px; /* ボタンの高さと同じに設定 */
+  padding-bottom: 24px; /* ボタンの高さと同じに設定 */
+}
+
+.modal-button-area {
+  display: flex;
+  margin: auto;
+  justify-content: center; /* ボタンを水平方向に中央に配置 */
+  align-items: center; /* ボタンを垂直方向に中央に配置 */
+
+}
+
+/* 以下はボタン用CSS */
+.btn{
+
+  cursor: pointer;
+  display: block;
+  width: 172px;
+  height: 32px;
+  background-color: #EE6969;
+  color: #fff;
+  border-radius: 4px;
+  border:none;
+  font-size: 14px;
+  line-height: 32px;
+
+
+}
+
+.btn update{
+  width: 172px;
+  height: 32px;
+  color: #1B5678;
+  border-color: #1B5678;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+
+.btn--cancel {
+  width: 234px;
+  height: 48px;
+  color: #fff;
+  cursor: pointer;
+  background-color:  #1B5678;
+  text-align: center;
+  font-weight: bold;
+  font-size: large ;
+  line-height: 48px;
+  box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.6);
+}
+
+.btn--cancel:hover {
+  background-color: rgb(207, 207, 249);
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.skill-new-head h1{
+  font-size:36px;
+  position: absolute;
+  width: 502px;
+  height: 48px;
+  top: 200px;
+  left: 469px;
+}
+
+.skill-new-body{
+  position: absolute;
+  width:  480px;
+  height:  268px;
+  top: 328px;
+  left: 480px;
+  gap: 48px;
+
+
+}
+
+
+.name-area{
+  height: 48px;
+  width: 100%;
+  margin-bottom: 35px;
+
+}
+
+.lebel-area{
+  height: 72px;
+  width: 100%;
+  margin-bottom: 35px;
+
+}
+
+.custom-input {
+  width: 100%;
+  border: none; /* ボーダーを非表示にする */
+  border-bottom: 1px solid #ccc;/* その他のスタイル設定（フォントサイズ、マージンなど） */
+}
+
+.new-button{
+  height: 53px;
+  width:232px;
+  background-color: #1B5678;
+  color: #FFFFFF;
+  position: absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  border-radius: 4px;
+  color:#FFF;
+}
+
+.custom-select {
+  width: 100%; /* 幅を指定 */
+  border: none; /* ボーダーを非表示にする */
+  border-bottom: 1px solid #ccc;
 }
