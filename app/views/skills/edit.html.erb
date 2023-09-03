@@ -22,23 +22,11 @@
 
                   <%= form_with model: skill, url: skill_path(skill), method: :patch, local: true do |f| %>
                     <td><%= f.select :level, (1..100).to_a, selected: skill.level %></td>
-                    <td><%= f.submit "習得レベルをする", class: "btn update-button", id: "modal-open-update" %></td>
+                    <td><%= button_to "習得レベルを保存する", skill_path(skill), method: :patch, class: "update-button", id: "modal-open-update" %></td>
                   <% end %>
-                  <div id="modal-overlay-update"> <%# モーダルウィンドウ表示時の黒背景 %>
-                    <div id="modal-content"> <%# モーダルウィンドウ部 %>
-                      <div class="modal-message">
-                        <p><%= skill.name %>の習得レベルを保存しました！</p>
-                      </div>
-                      <div class="modal-button-area">
-                        <p><a id="modal-close" class="btn btn--cancel">スキル編集ページに戻る</a></p>
-                      </div>
-                    </div>
-                  </div>
-
-
 
                 <td>
-                  <%= button_to "スキルを削除する", skill_path(skill), method: :delete, class: "btn delete-button", id: "modal-open-delete" %>
+                  <%= button_to "スキルを削除する", skill_path(skill), method: :delete, class: "delete-button", id: "modal-open-delete" %>
                   <!-- 削除用モーダルウィンドウ -->
                   <div id="modal-overlay-delete"> <%# モーダルウィンドウ表示時の黒背景 %>
                     <div id="modal-content"> <%# モーダルウィンドウ部 %>

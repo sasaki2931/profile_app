@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
 </head>
 </head>
   </head>
@@ -31,10 +32,20 @@
     　　 </ul>
   　　</nav>
 　 </header>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
+<% flash.each do |key, value| %>
+  <div id="modal-overlay" class="overlay">
+    <div class="center-alert">
+      <div class="alert <%= flash_class_for(key) %>" role="alert">
+        <%= value %>
+          <%= button_to "スキルを編集する", edit_skill_path, method: :get, class: "btn btn--edit" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+　 </div>
+　 </div>
     <%= yield %>
+
     <footer>
       <p>user name's profile site</p>
     </footer>

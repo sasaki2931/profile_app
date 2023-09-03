@@ -1,37 +1,8 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails"
-import "controllers"
-
- import jquery from "jquery"
- window.$ = jquery
-
-
- $(function() {
-
-  // .delete-buttonがクリックされたらモーダルウィンドウを表示
-  $("#modal-open-update").on('click', function(){
-
-      // #modal-overlayをフェードイン(display: none; → block;)させる
-      $("#modal-overlay-update").fadeIn("fast");
-
+document.addEventListener('DOMContentLoaded', function() {
+  // 閉じるボタンがクリックされたときにアラートを非表示にする
+  $("#modal-close").on('click', function(){
+    // モーダルウィンドウを非表示にする処理を追加
+    $("#modal-overlay").fadeOut("fast"); // モーダルウィンドウ非表示
   });
-
-
-  $("#modal-open-delete").on('click', function(){
-
-      // #modal-overlayをフェードイン(display: none; → block;)させる
-      $("#modal-overlay-delete").fadeIn("fast");
-
-  });
-
-
-
-  // .back-buttonか#modal-overlayがクリックされたらモーダルウィンドウを削除
-   $("#modal-close, #modal-update-overlay, #modal-delete-overlay").on('click', function(){
-    $("#modal-update-overlay, #modal-delete-overlay").fadeOut("fast");
-  });
-
-
-
 });
-

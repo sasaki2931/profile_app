@@ -26,7 +26,17 @@
   </div>
   <%= f.hidden_field :category_id, value: "#{@category_id}" %>
   <div class="new-button-area">
-    <%= f.submit "追加する", class: "new-button" %>
+    <%= f.submit "追加する", class: "new-button",id: "modal-open-create" %>
+     <div id="modal-overlay-create"> <%# モーダルウィンドウ表示時の黒背景 %>
+    <div id="modal-content"> <%# モーダルウィンドウ部 %>
+      <div class="modal-message">
+        <p>を追加しました</p>
+      </div>
+      <div class="modal-button-area">
+        <p><a id="modal-close" class="btn btn--cancel">スキル編集ページに戻る</a></p>
+      </div>
+    </div>
+  </div>
   </div>
 <% end %>
 

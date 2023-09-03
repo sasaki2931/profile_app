@@ -414,25 +414,30 @@ tbody{
   background-color: #1B5678;
   color: #FFFFFF;
   border-radius: 4px;
-
+  font-size:14px;
+  text-align: center;
   position: absolute;
   bottom: 0;
   right: 20%;
+  display: flex; /* フレックスコンテナを作成 */
+  justify-content: center; /* テキストを水平方向に中央配置 */
+  align-items: center;
 
 }
 
 
 
-
 .update-button{
+  display: block;
   width: 172px;
   height: 32px;
-  color: #1B5678;
-  border-color: #1B5678;
-  background-color: #fff;
-  border-radius: 8px;
+  background-color: #1B5678;
+  color: #fff;
+  border-radius: 4px;
+  border:none;
+  font-size: 14px;
+  line-height: 32px;
   cursor: pointer;
-
 }
 
 .delete-button{
@@ -446,6 +451,16 @@ tbody{
   font-size: 14px;
   line-height: 32px;
   cursor: pointer;
+
+}
+
+.btn--edit{
+background-color: #1B5678;
+  color: #fff;
+  width: 234px;
+  height: 48px;
+  border-radius: 4px;
+  margin: 20px 0; /* 上下のマージンを追加 */
 
 }
 
@@ -485,6 +500,17 @@ select{
   background-color: rgba(0,0,0,0.75); /* 背景を黒の半透明に */
 }
 
+#modal-overlay-create{
+  display: none;/* デフォルトは非表示 */
+  z-index: 1;      /* モーダルウィンドウと通常画面の間に表示 */
+  position: fixed; /* 表示を固定してスクロールで動かさない */
+  top: 0;          /* 全画面表示なので0 */
+  left: 0;         /* 全画面表示なので0 */
+  width: 100%;     /* 全画面表示なので100% */
+  height: 100%;    /* 全画面表示なので100%。スマートフォンでの表示対応する場合は120%に */
+  background-color: rgba(0,0,0,0.75); /* 背景を黒の半透明に */
+}
+
 
 
 #modal-content {
@@ -503,65 +529,67 @@ select{
   background: #fff;
 }
 
-.modal-message {
-  text-align: center;
-  font-size:18px;
-  padding-top: 24px; /* ボタンの高さと同じに設定 */
-  padding-bottom: 24px; /* ボタンの高さと同じに設定 */
-}
 
-.modal-button-area {
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明の背景色 */
   display: flex;
-  margin: auto;
-  justify-content: center; /* ボタンを水平方向に中央に配置 */
-  align-items: center; /* ボタンを垂直方向に中央に配置 */
-
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* アラートを最前面に表示 */
 }
 
-/* 以下はボタン用CSS */
-/*.btn{
-
-  cursor: pointer;
-  display: block;
-  width: 172px;
-  height: 32px;
-  background-color: #EE6969;
-  color: #fff;
-  border-radius: 4px;
-  border:none;
-  font-size: 14px;
-  line-height: 32px;
-
-
-}*/
-
-.btn update{
-  width: 172px;
-  height: 32px;
-  color: #1B5678;
-  border-color: #1B5678;
-  background-color: #fff;
-  border-radius: 8px;
-}
-
-
-.btn--cancel {
-  width: 234px;
-  height: 48px;
-  color: #fff;
-  cursor: pointer;
-  background-color:  #1B5678;
+.center-alert {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  font-weight: bold;
-  font-size: large ;
-  line-height: 48px;
-  box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.6);
+  max-width: 80%;
+  width: 640px;
+  height:240px;
+  font-size:18px;
+  display: flex;
+  flex-direction: column; /* アイテムを縦方向に配置 */
+  align-items: center; /* アイテムを中央に配置 */
+  justify-content: space-between; /* 上下に均等なスペースを割り当て */ /* コンテナ要素全体を占める高さ */
 }
 
-.btn--cancel:hover {
-  background-color: rgb(207, 207, 249);
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2);
+
+.alert{
+  width: 345px;
+  height: 52px;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 50px;
+
+
 }
+
+.btn--cancel{
+  border-bottom: none;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

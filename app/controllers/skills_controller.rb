@@ -13,7 +13,8 @@ class SkillsController < ApplicationController
   if @skill.save
     # スキルが正常に作成された場合
     # カテゴリーにスキルを関連付ける
-    redirect_to edit_skill_path(@skill) # 新しいスキルの編集ページにリダイレクト
+    redirect_to edit_skill_path(@skill)
+     flash[:success] = "#{@skill.category.name}に#{@skill.name}を習得レベル#{@skill.level}で追加しました！"
   else
     #errors = @skill.errors.full_messages
     #puts errors
@@ -38,10 +39,8 @@ class SkillsController < ApplicationController
     @categories = Category.all
     @skill = Skill.find(params[:id]) if params[:id]
     if @skill.update(update_params)
-
-      #redirect_to categores_path
-
       redirect_to edit_skill_path
+       flash[:danger] = "#{@skill.name}の習得レベルを保存しました！"
     else
 
       render :edit
@@ -51,8 +50,8 @@ class SkillsController < ApplicationController
   def destroy
    @skill = Skill.find(params[:id])
    @skill.destroy
-   redirect_to categores_path
-
+   redirect_to edit_skill_path
+   flash[:danger] = "#{@skill.name}の削除しまいした"
   end
 
   private
