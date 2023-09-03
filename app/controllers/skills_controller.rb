@@ -7,13 +7,23 @@ class SkillsController < ApplicationController
   end
 
   def create
-    @skill = Skill.create(skill_params)
+  @categories = Category.all
+  @skill = Skill.new(skill_params) # 新しいスキルを作成するだけで保存はしない
+
     if @skill.save
-      redirect_to skill_path(@skill.id)
+    # スキルが正常に作成された場合
+      redirect_to edit_skill_path(@skill) # 新しいスキルの編集ページにリダイレクト
     else
-      render :new
+    # スキルの作成に失敗した場合
+    render :new
     end
   end
+
+
+
+
+
+
 
   def edit
     @categories = Category.all
@@ -27,8 +37,9 @@ class SkillsController < ApplicationController
     @categories = Category.all
     @skill = Skill.find(params[:id]) if params[:id]
     if @skill.update(update_params)
-      #binding.pry
+
       #redirect_to categores_path
+
       redirect_to edit_skill_path
     else
 
