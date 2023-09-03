@@ -36,46 +36,53 @@
 </div>
 </div>
 
+
 <div class="chart-container">
   <canvas id="barChart"></canvas>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let barCtx = document.getElementById("barChart");
+  document.addEventListener("DOMContentLoaded", function () {
+    let barCtx = document.getElementById("barChart");
 
-      // ダミーデータの代わりに、提供されたデータを使用
-      let months = ['先々月', '先月', '今月'];
+    // データベースから取得したデータをJavaScriptの変数に埋め込む
+    let frontendData = <%= @frontend_data.to_json.html_safe %>;
+    let backendData = <%= @backend_data.to_json.html_safe %>;
+    let infraData = <%= @infra_data.to_json.html_safe %>;
 
-      // 各カテゴリのIDを取得
+    let months = ['先々月', '先月', '今月'];
+    console.log(infraData);
+     console.log(backendData);
+     console.log(frontendData)
 
-      let barConfig = {
-        type: 'bar',
-        data: {
-          labels: months,
-          datasets: [{
-            label: 'フロントエンド',
-            data: frontendData,
-            backgroundColor: '#f88',
-          }, {
-            label: 'バックエンド',
-            data: backendData,
-            backgroundColor: '#484',
-          }, {
-            label: 'インフラ',
-            data: infraData,
-            backgroundColor: '#48f',
-          }],
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-              suggestedMax: 100,  // 最大値の設定
-            },
+    let barConfig = {
+      type: 'bar',
+      data: {
+        labels: months,
+        datasets: [{
+          label: 'フロントエンド',
+          data: frontendData,
+          backgroundColor: '#f88',
+        }, {
+          label: 'バックエンド',
+          data: backendData,
+          backgroundColor: '#484',
+        }, {
+          label: 'インフラ',
+          data: infraData,
+          backgroundColor: '#48f',
+        }],
+      },
+      options: {
+        scales: {
+          y: {
+            display: true,
+            beginAtZero: true,
+            suggestedMax: 100,
           },
         },
-      };
+      },
+    };
 
-      let barChart = new Chart(barCtx, barConfig);
-    });
-  </script>
+    let barChart = new Chart(barCtx, barConfig);
+  });
+</script>
 </div>

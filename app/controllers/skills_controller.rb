@@ -18,7 +18,7 @@ class SkillsController < ApplicationController
   else
     #errors = @skill.errors.full_messages
     #puts errors
-    binding.pry # スキルの作成に失敗した場合
+    #binding.pry # スキルの作成に失敗した場合
     render :new
   end
  end

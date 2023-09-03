@@ -104,7 +104,6 @@ footer {
 .show{
   width: 1,440px;
   height: 811px;
-  background-color: #ccc;
   position: relative;
 }
 
@@ -115,7 +114,7 @@ footer {
   width: 45%;
   float: left;
   margin-right: 10px;
-  background-color: #ccc;
+
 }
 
 .profile{
@@ -162,7 +161,6 @@ footer {
   width: 960px ;
   height: 331px ;
   gap: 80px ;
-  background-color: #ccc;
   bottom:0;
   left:0;
   right:0;
