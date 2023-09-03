@@ -2,14 +2,14 @@
   <% @categories.each do |category| %>
     <div class="skill-category">
       <div class="skill-card">
-           <div class="thead">
-  　　　　　　　　<div class="category-name">
-    　　　　　　　<%= category.name %>
- 　　　　　　　　 </div>
-  　　　　　　<div class="button-container">
-   　　　　　　 <%= button_to "スキルを追加する", new_skill_path(category_id: category.id), method: :get, class: "skill-button" %>
-  　　　　　　</div>
-　　　</div>
+          <div class="thead">
+            <div class="category-name">
+              <div class="name"><%= category.name %></div>
+    　　　 　　 </div>
+  　　　  　　　<div class="button-container">
+   　　　　  　　 <%= button_to "スキルを追加する", new_skill_path(category_id: category.id), method: :get, class: "skill-button" %>
+  　　　　  　　</div>
+　　　    </div>
           <table class="skill-table">
           <tbody>
             <tr>
@@ -22,7 +22,7 @@
 
                   <%= form_with model: skill, url: skill_path(skill), method: :patch, local: true do |f| %>
                     <td><%= f.select :level, (1..100).to_a, selected: skill.level %></td>
-                    <td><%= f.submit "スキルを更新する", class: "btn update-button", id: "modal-open-update" %></td>
+                    <td><%= f.submit "習得レベルを更新する", class: "btn update-button", id: "modal-open-update" %></td>
                   <% end %>
                   <div id="modal-overlay-update"> <%# モーダルウィンドウ表示時の黒背景 %>
                     <div id="modal-content"> <%# モーダルウィンドウ部 %>
