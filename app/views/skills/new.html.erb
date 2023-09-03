@@ -24,6 +24,7 @@
     <%= f.select :level, (1..100).to_a, {}, { class: "custom-input custom-select" } %>
     <p>1~100の間で選択してください</p>
   </div>
+  <%= f.hidden_field :category_id, value: "#{@category_id}" %>
   <div class="new-button-area">
     <%= f.submit "追加する", class: "new-button" %>
   </div>
