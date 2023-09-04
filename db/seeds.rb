@@ -16,7 +16,8 @@ user = User.create!(
   name: "Example User",
   email: "example@railstutorial.org",
   password: "foobar",
-  password_confirmation: "foobar"
+  password_confirmation: "foobar",
+  introduce: "自己紹介が入ります,自己紹介が入ります、自己紹介が入ります、自己紹介が入ります、自己紹介が入ります、自己紹介が入ります、自己紹介がはいり時ます、自己紹介が入ります"
 )
 
 user.skills << html

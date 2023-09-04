@@ -17,20 +17,17 @@
   <body>
    <header>
       <h1 class= "title">My profile</h1>
-  　　<nav class = "nav">
-  　　<ul class = "button">
-
+  　　<div class = "nav">
     　　<% if logged_in? %>
-      　　<li class="button-menu">
-        　　<%= button_to "Logout", session_path(current_user.id), method: :delete %>
-      　   </li>
+      　　<div class="button-menu">
+        　　<%= button_to "ログアウト", session_path(current_user.id), method: :delete,class:"header-button" %>
+      　   </div>
     　　<% else %>
-      　　<li class="button-menu">
-        　　<%= button_to "Login", new_session_path, method: :get %>
-      　　</li>
+      　　<div class="button-menu">
+        　　<%= button_to "ログイン", new_session_path, method: :get,class:"header-button" %>
+      　　</div>
     　　<% end %>
-    　　 </ul>
-  　　</nav>
+  　　</div>
 　 </header>
 <% flash.each do |key, value| %>
   <div id="modal-overlay" class="overlay">
