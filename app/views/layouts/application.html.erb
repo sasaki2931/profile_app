@@ -5,46 +5,26 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 
-</head>
-</head>
   </head>
 
   <body>
    <header>
-      <h1 class= "title">My profile</h1>
-  　　<div class = "nav">
-    　　<% if logged_in? %>
-      　　<div class="button-menu">
-        　　<%= button_to "ログアウト", session_path(current_user.id), method: :delete,class:"header-button" %>
-      　   </div>
-    　　<% else %>
-      　　<div class="button-menu">
-        　　<%= button_to "ログイン", new_session_path, method: :get,class:"header-button" %>
-      　　</div>
-    　　<% end %>
-  　　</div>
+     <div class ="logo"><b>My profile</b></div>
+     <% if logged_in? %>
+       <%= button_to "ログアウト", session_path(current_user), method: :delete, class: "header-button" %>
+    <% else %>
+       <%= button_to "ログイン", new_session_path, method: :get, class: "header-button" %>
+    <% end %>
 　 </header>
-<% flash.each do |key, value| %>
-  <div id="modal-overlay" class="overlay">
-    <div class="center-alert">
-      <div class="alert <%= flash_class_for(key) %>" role="alert">
-        <%= value %>
-          <%= button_to "スキルを編集する", edit_skill_path, method: :get, class: "btn btn--edit" %>
-      </div>
-    </div>
-  </div>
-<% end %>
-　 </div>
-　 </div>
+　　<%= render 'skills/frash' %>
     <%= yield %>
 
     <footer>
-      <p>user name's profile site</p>
+      user name's profile site
     </footer>
   </body>
 </html>

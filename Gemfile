@@ -41,6 +41,8 @@ gem 'bcrypt'
 gem "faker",           "2.21.0"
 
 gem 'image_processing', '~> 1.2'
+
+gem 'sassc'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -56,6 +58,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -70,6 +74,8 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'factory_bot_rails'
   gem 'launchy'
+  gem 'factory_bot_rails'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -84,8 +90,8 @@ group :development do
 end
 
 group :test do
+
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
-  gem "selenium-webdriver"
   gem "webdrivers"
 end

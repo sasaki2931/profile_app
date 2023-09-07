@@ -10,19 +10,11 @@
 </div>
 <div class="profile">
     <h1>自己紹介</h1>
-  <% @users.each do |user| %>
     <div class="user-info">
-      <tr>
-        <% if user.introduce.blank? %>
-         <P>ここに自己紹介を表示する、ここに自己紹介を表示する、ここに自己紹介を表示する、ここに自己紹介を表示する,
-         ここに自己紹介を表示する<p>
-        <else>
-          <td><%= user.introduce %></td>
-        <% end %>
-        <td><%= button_to "自己紹介を編集する", edit_user_path(user),method: :get,class: "edit-button" %></td>
+        <td><%= @user.introduce %></td>
+        <td><%= button_to "自己紹介を編集する", edit_user_path(@user),method: :get,class: "edit-button" %></td>
       </tr>
     </div>
-  <% end %>
 </div>
 
 <div class = "skill">
@@ -76,7 +68,9 @@
           y: {
             display: true,
             beginAtZero: true,
+            suggestedMin: 0,
             suggestedMax: 100,
+            stepSize: 20
           },
         },
       },

@@ -1,3 +1,5 @@
+
+
 html {
     font-size: 62.5%;
     height: 1548px;
@@ -8,17 +10,42 @@ html {
 
   body {
     height: 1548px;
+    margin:0;
   }
 
 
 
 header {
-  display: flex;
+
   width: 100%;
   height: 120px;
   background-color: #1B5678;
-  align-items: center;
-  position: relative
+  position: relative;
+
+}
+
+.logo{
+  position: absolute;
+  font-size: 36px;
+  width: 201px;
+  height: 42px;
+  top:30px;
+  left: 30px;
+  color: #FFF;
+
+}
+
+
+.header-button{
+  position: absolute;
+  background-color: #FFF;
+  width: 152px;
+  height: 53px;
+  right: 30px;
+  top:30px;
+  border-radius: 4px;
+  font-size: 18px;
+  color: #000;
 }
 
 footer {
@@ -33,17 +60,18 @@ footer {
   font-size: 18px;
 }
 
-.header-button{
-  background-color: #fff;
-  width:  170px;
-  height: 53px;
-  border-radius: 4px;
-  position:absolute;
-  right: 20px;
-  bottom:30px;
+
+
+
+
+
+
+.flash-area{
+  background-color: #FF0000;
+  height: 50px;
+  text-align: center;
   font-size: 18px;
 }
-
 
 .title {
   margin-right: auto;
@@ -53,7 +81,7 @@ footer {
 }
 
 
-.form{
+.form-body{
   height:245px;
   width:480px;
   position: absolute;
@@ -150,6 +178,7 @@ footer {
   border-radius: 4px ;
   height: 45px;
   margin-left: 0;
+  margin-top: 20px;
 }
 
 .profile p{
@@ -238,14 +267,13 @@ footer {
   position: relative;
   display:flex;
   flex-flow: column;
-　justify-content:space-between;
+　justify-content: space-between;
 }
 
 .user-edit-button {
   background-color: #1B5678;
   color: #fff;
   position: absolute;
-  bottom: 0;
   left: 50%; /* 親要素の中央に移動するために左端を50%に */
   transform: translateX(-50%); /* 左に50%移動して中央に配置 */
   width: 322px;
@@ -328,6 +356,7 @@ tbody{
 .skill-table tr{
   border-bottom: 1px solid #ccc;
   height: 57px;
+  min-height: 73px;
 
 
 }
@@ -339,9 +368,9 @@ tbody{
 
 .skill-table th,
 .skill-table td {
-    padding: 5px;
     border: none;
     text-align: center;
+    height: 70px;
 }
 
 
@@ -365,6 +394,7 @@ tbody{
     display: flex;
     align-items: center;
     position: relative;
+
 }
 
 
@@ -373,15 +403,21 @@ tbody{
 .skill-card{
   margin: auto;
   height: 356px;
-  overflow-x: scroll;
+
+
 
 }
 
 .skill-table {
     width: 880px;
-    height: 283px;
+    height: auto;
     border-collapse: collapse;
     margin: auto;
+}
+
+.overflow-scroll {
+  overflow-x: scroll;
+
 
 
 }
@@ -471,7 +507,7 @@ tbody{
 }
 
 .btn--edit{
-background-color: #1B5678;
+  background-color: #1B5678;
   color: #fff;
   width: 234px;
   height: 48px;
@@ -494,59 +530,6 @@ select{
 
 
 
-#modal-overlay-update {
-  display: none;  /* デフォルトは非表示 */
-  z-index: 1;      /* モーダルウィンドウと通常画面の間に表示 */
-  position: fixed; /* 表示を固定してスクロールで動かさない */
-  top: 0;          /* 全画面表示なので0 */
-  left: 0;         /* 全画面表示なので0 */
-  width: 100%;     /* 全画面表示なので100% */
-  height: 100%;    /* 全画面表示なので100%。スマートフォンでの表示対応する場合は120%に */
-  background-color: rgba(0,0,0,0.75); /* 背景を黒の半透明に */
-}
-
-#modal-overlay-delete {
-  display: none;  /* デフォルトは非表示 */
-  z-index: 1;      /* モーダルウィンドウと通常画面の間に表示 */
-  position: fixed; /* 表示を固定してスクロールで動かさない */
-  top: 0;          /* 全画面表示なので0 */
-  left: 0;         /* 全画面表示なので0 */
-  width: 100%;     /* 全画面表示なので100% */
-  height: 100%;    /* 全画面表示なので100%。スマートフォンでの表示対応する場合は120%に */
-  background-color: rgba(0,0,0,0.75); /* 背景を黒の半透明に */
-}
-
-#modal-overlay-create{
-  display: none;/* デフォルトは非表示 */
-  z-index: 1;      /* モーダルウィンドウと通常画面の間に表示 */
-  position: fixed; /* 表示を固定してスクロールで動かさない */
-  top: 0;          /* 全画面表示なので0 */
-  left: 0;         /* 全画面表示なので0 */
-  width: 100%;     /* 全画面表示なので100% */
-  height: 100%;    /* 全画面表示なので100%。スマートフォンでの表示対応する場合は120%に */
-  background-color: rgba(0,0,0,0.75); /* 背景を黒の半透明に */
-}
-
-
-
-#modal-content {
-  z-index: 2;      /* 最前面に表示 */
-  position: fixed; /* 表示位置を固定 */
-  top: 50%;        /* 画面中央に表示 */
-  left: 50%;       /* 画面中央に表示 */
-  transform: translate(-50%, -50%); /* モーダルウィンドウの大きさ分中央にずらす */
-  /* 以下はモーダルウィンドウの外観。ご自由に */
-  width: 640px;
-  height:240px;
-  margin: 1.5em auto 0;
-  padding: 10px 20px;
-  border: 2px solid #aaa;
-  border-radius: 5px;
-  background: #fff;
-}
-
-
-
 
 .overlay {
   position: fixed;
@@ -554,50 +537,49 @@ select{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* 半透明の背景色 */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* アラートを最前面に表示 */
+  z-index: 9999;
 }
 
 .center-alert {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
   text-align: center;
-  max-width: 80%;
+  padding: 20px;
   width: 640px;
   height:240px;
-  font-size:18px;
-  display: flex;
-  flex-direction: column; /* アイテムを縦方向に配置 */
-  align-items: center; /* アイテムを中央に配置 */
-  justify-content: space-between; /* 上下に均等なスペースを割り当て */ /* コンテナ要素全体を占める高さ */
+  display: flex; /* flexコンテナを作成 */
+  flex-direction: column; /* 縦方向に要素を配置 */
+  justify-content: center; /* 中央に配置 */
+  align-items: center; /* 中央に配置 */
+
+
 }
 
-
-.alert{
-  width: 345px;
-  height: 52px;
-  text-align: center;
+.value-area{
+  margin-top:40px;
   font-size: 18px;
-  margin-top: 50px;
-
 
 }
 
-.btn--cancel{
-  border-bottom: none;
-
+.button-area{
+  margin-top: 80px;
+  width: 234px;
+  height: 48px;
 }
 
 
+.button_back {
 
-
-
-
+  width: 100%;
+  height: 48px;
+  background-color: #1B5678;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
 
 
 
@@ -668,4 +650,15 @@ select{
   width: 100%; /* 幅を指定 */
   border: none; /* ボーダーを非表示にする */
   border-bottom: 1px solid #ccc;
+}
+
+#error_explanation{
+  text-align: center;
+  margin-bottom: 50px;
+  background-color: #FF0000
+}
+
+#error_explanation li{
+  font-size: 18px;
+  list-style: none;
 }
