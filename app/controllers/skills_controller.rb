@@ -3,23 +3,21 @@ class SkillsController < ApplicationController
   before_action :set_skill, only: [:new,:edit,:destroy]
 
   def new
-
     @user = current_user
     @skill = Skill.new
     @category_id = params[:category_id]
-
   end
 
  def create
-  @skill = current_user.skills.build(skill_params)
-  @category_id = @skill.category_id
-  if @skill.save
-    flash[:success] = "#{@skill.category.name}に#{@skill.name}を習得レベル#{@skill.level}で追加しました！"
-    redirect_to edit_skill_path(@skill)
-  else
-    render :new
-  end
- end
+   @skill = current_user.skills.build(skill_params)
+   @category_id = @skill.category_id
+   if @skill.save
+      flash[:success] = "#{@skill.category.name}に#{@skill.name}を習得レベル#{@skill.level}で追加しました！"
+      redirect_to edit_skill_path(@skill)
+    else
+      render :new
+    end
+   end
 
 
   def edit

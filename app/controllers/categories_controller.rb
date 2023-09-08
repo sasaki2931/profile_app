@@ -15,16 +15,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def show
-    @categories = Category.all
-  end
-
-  def destroy
-     @category.destroy
-     redirect_to categories_path, notice:"ブログを削除しました！"
-  end
-
-
     private
 
     def category_params
@@ -35,5 +25,4 @@ class CategoriesController < ApplicationController
     def set_category
       @category = Category.find(params[:id])
     end
-
 end
