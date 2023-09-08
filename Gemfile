@@ -74,7 +74,6 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'factory_bot_rails'
   gem 'launchy'
-  gem 'factory_bot_rails'
   gem 'webdrivers'
 end
 
@@ -93,5 +92,5 @@ group :test do
 
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
-  gem "webdrivers"
+
 end

@@ -16,21 +16,15 @@
               <th class="header2">習得スキル</th>
               <th class="header2">習得レベル</th>
             </tr>
-            <% category.skills.each do |skill| %>
-              <tr>
-                <td><%= skill.name %></td>
-
-                  <%= form_with model: skill, url: skill_path(skill), method: :patch, local: true do |f| %>
-                    <td><%= f.select :level, (1..100).to_a, selected: skill.level %></td>
-                    <td><%= button_to "習得レベルを保存する", skill_path(skill), method: :patch, class: "update-button", id: "modal-open-update" %></td>
-                  <% end %>
-
-                <td>
-                  <%= button_to "スキルを削除する", skill_path(skill), method: :delete, class: "delete-button", id: "modal-open-delete" %>
-                    </div>
-                  </div>
-                </td>
-              </tr>
+            <% category.skills.each_with_index do |skill, index| %>
+            <tr>
+              <td><%= skill.name %></td>
+                <%= form_with model: skill, url: skill_path(skill), method: :patch, local: true do |f| %>
+                  <td><%= f.select :level, (1..100).to_a, selected: skill.level, class: "custom-select-box skill-select-box-#{index}" %></td>
+                  <td><%= button_to "習得レベルを保存する", skill_path(skill), method: :patch, class: "update-button skill-update-button-#{index}", id: "modal-open-update" %></td>
+                <% end %>
+                  <td><%= button_to "スキルを削除する", skill_path(skill), method: :delete, class: "delete-button", id: "modal-open-delete" %></td>
+            </tr>
             <% end %>
           </tbody>
         </table>
