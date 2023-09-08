@@ -6,6 +6,8 @@ class SkillsController < ApplicationController
     @user = current_user
     @skill = Skill.new
     @category_id = params[:category_id]
+    @category = Category.find(params[:category_id])
+
   end
 
  def create

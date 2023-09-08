@@ -1,18 +1,17 @@
 <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
   <div class = "center">
     <div class ="center-inner">
-     <div class = "field">
-       <p><%= f.label :メールアドレス %></p>
-       <p><%= f.email_field :email, class: "input-underline",id: 'session_email' %></p>
-     </div>
-     <div class = "filed">
-       <p> <%= f.label :パスワード %></p>
-       <p> <%= f.password_field :password, class: "input-underline",id: 'session_password' %></p>
-     </div>
+      <div class = "field">
+        <p><%= f.label :メールアドレス %></p>
+        <p><%= f.email_field :email, class: "input-underline",id: 'session_email' %></p>
+      </div>
+      <div class = "filed">
+        <p> <%= f.label :パスワード %></p>
+        <p> <%= f.password_field :password, class: "input-underline",id: 'session_password' %></p>
+      </div>
     </div>
     <div class ="actions">
       <%= f.submit "Log in",class:"submit-button" %>
     </div>
   </div>
 <% end %>
-</div>

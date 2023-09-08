@@ -1,22 +1,20 @@
 <% if logged_in? %>
-<% flash.each do |key, value| %>
-  <div id="modal-overlay" class="overlay">
-    <div class="center-alert">
-      <div class ="value-area">
-        <%= value %>
-      </div>
-        <% if key == 'success' %>
-        <div class="button-area">
-          <%= button_to "編集ページに戻る",edit_skill_path,method: :get,class: "button_back" %>
+  <% flash.each do |key, value| %>
+    <div id="modal-overlay" class="overlay">
+      <div class="center-alert">
+        <div class ="value-area">
+          <%= value %>
         </div>
+        <% if key == 'success' %>
+          <div class="button-area">
+            <%= button_to "編集ページに戻る",edit_skill_path,method: :get,class: "button_back" %>
+          </div>
         <% elsif key == 'danger' %>
-        <div class="button-area">
-　　　　  <%= button_to "戻る", edit_skill_path, method: :get,class: "button_back" %>
-　　　　</div>
+          <div class="button-area">
+　　　　    <%= button_to "戻る", edit_skill_path, method: :get,class: "button_back" %>
+　　　　  </div>
         <% end %>
       </div>
-      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 <% end %>

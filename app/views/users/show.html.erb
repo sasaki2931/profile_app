@@ -1,31 +1,30 @@
 <div class = "show">
-<div class ="image">
-　<p>
-  <% if @user.image.present? %>
-  　　<%= image_tag @user.image.url,class: "rounded-circle", size: "360x360" %>
-　<% else %>
-    <%= image_tag "gray.jpg",class: "rounded-circle", size: "360x360" %>
-　<% end %>
-  </p>
-</div>
-<div class="profile">
+  <div class ="image">
+　  <p>
+      <% if @user.image.present? %>
+  　　    <%= image_tag @user.image.url,class: "rounded-circle", size: "360x360" %>
+　    <% else %>
+        <%= image_tag "gray.jpg",class: "rounded-circle", size: "360x360" %>
+　    <% end %>
+    </p>
+  </div>
+
+  <div class="profile">
     <h1>自己紹介</h1>
     <div class="user-info">
-        <td><%= @user.introduce %></td>
-        <td><%= button_to "自己紹介を編集する", edit_user_path(@user),method: :get,class: "edit-button" %></td>
-      </tr>
+      <td><%= @user.introduce %></td>
+      <td><%= button_to "自己紹介を編集する", edit_user_path(@user),method: :get,class: "edit-button" %></td>
     </div>
-</div>
-
-<div class = "skill">
-  <div class = "skill-body">
-    <div class = "skill-head">
-      <h2>スキルチャート</h2>
-　  </div>
-　  <td><%= button_to "スキルを編集する", edit_skill_path(@user),method: :get,class: "edit-skill-button" %></td>
   </div>
-</div>
-</div>
+
+  <div class = "skill">
+    <div class = "skill-body">
+      <div class = "skill-head">
+        <h2>スキルチャート</h2>
+　    </div>
+　    <td><%= button_to "スキルを編集する", edit_skill_path(@user),method: :get,class: "edit-skill-button" %></td>
+    </div>
+  </div>
 </div>
 
 

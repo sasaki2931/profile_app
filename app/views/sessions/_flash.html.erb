@@ -1,6 +1,5 @@
-
-    <% flash.each do |key, value| %>
-    <div class ="flash-area">
-      <%= content_tag(:div, value, class: "#{key}") %>
-    </div>
-    <% end %>
+<% flash.each do |key, value| %>
+  <div class ="flash-area">
+    <%= content_tag(:div, value, class: "#{key}") %>
+  </div>
+<% end %>
