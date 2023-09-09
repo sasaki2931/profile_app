@@ -1,0 +1,21 @@
+databases: Sample App db
+  - name: profile_app
+    databaseName: sample_app_db_dml2
+    user: profile_app
+    region: singapore
+
+services:
+  - type: web
+    name: profile_app
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: Sample App db
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
