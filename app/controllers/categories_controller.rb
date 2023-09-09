@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-　　before_action :login_required
 
 
   def new
