@@ -1,9 +1,9 @@
 <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
   <div class = "center">
     <div class ="center-inner">
-      <div class = "field">
-        <p><%= f.label :メールアドレス %></p>
-        <p><%= f.email_field :email, class: "input-underline",id: 'session_email' %></p>
+      <div class = "filed">
+        <%= f.label :メールアドレス %>
+        <%= f.email_field :email, class: "input-underline",id: 'session_email' %>
       </div>
       <div class = "filed">
         <p> <%= f.label :パスワード %></p>

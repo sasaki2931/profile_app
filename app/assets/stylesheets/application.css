@@ -102,6 +102,17 @@ main{
 
 }
 
+
+
+.filed{
+  height: 48px;
+}
+
+.filed label{
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
 .center-title{
   position: absolute;
   width: 144px;
