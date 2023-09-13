@@ -12,7 +12,7 @@
 
   <body>
     <header>
-      <div class ="logo"><b>My profile</b></div>
+      <div class ="logo"><%= link_to "MY profile", sessions_path,class: "logo-font" %></div>
       <% if logged_in? %>
        <%= button_to "ログアウト", session_path(current_user), method: :delete, class: "header-button" %>
       <% else %>

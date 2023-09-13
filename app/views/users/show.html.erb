@@ -12,7 +12,7 @@
   <div class="profile">
     <h1>自己紹介</h1>
     <div class="user-info">
-      <td><%= @user.introduce %></td>
+      <p><%= @user.introduce %></p>
       <td><%= button_to "自己紹介を編集する", edit_user_path(@user),method: :get,class: "edit-button" %></td>
     </div>
   </div>
@@ -51,15 +51,15 @@
         datasets: [{
           label: 'フロントエンド',
           data: frontendData,
-          backgroundColor: '#f88',
+        　backgroundColor: 'rgba(244, 180, 196, 0.9)'
         }, {
           label: 'バックエンド',
           data: backendData,
-          backgroundColor: '#484',
+          backgroundColor: 'rgba(244, 212, 172, 0.9)'
         }, {
           label: 'インフラ',
-          data: infraData,
-          backgroundColor: '#48f',
+          data: infraData,frontendData,
+          backgroundColor: 'rgba(251, 228, 180, 0.9)'
         }],
       },
       options: {

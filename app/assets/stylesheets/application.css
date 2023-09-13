@@ -2,14 +2,11 @@
 
 html {
     font-size: 62.5%;
-    height: 1548px;
-    width: 1440px;
     position: relative;
 
   }
 
   body {
-    height: 1548px;
     margin:0;
   }
 
@@ -35,6 +32,14 @@ header {
 
 }
 
+.logo-font{
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
 
 .header-button{
   position: absolute;
@@ -46,6 +51,7 @@ header {
   border-radius: 4px;
   font-size: 18px;
   color: #000;
+  border:none
 }
 
 
@@ -115,7 +121,7 @@ footer {
   position: absolute;
   bottom: 0;
   right: 20%;
-
+  font-size: 18px;
 }
 
 .input-underline{
@@ -168,6 +174,12 @@ footer {
 
 
 .profile h1 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  width:30%;
+  font-size:36px;
+}
+
+.user-introduce{
   border-bottom: 1px solid #000;
   width:30%;
 }
@@ -182,7 +194,8 @@ footer {
 }
 
 .profile p{
-  height:50px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.75);
 }
 
 .user-info{
@@ -223,7 +236,7 @@ footer {
 .skill-head{
   height:58px;
   width:400px;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .skill-head h2{
@@ -322,7 +335,7 @@ footer {
 
 .skill-container {
     width: 960px;
-    height: 1338px;
+    height: 1599px;
     gap: 80px;
     margin: auto;
 
@@ -336,16 +349,17 @@ footer {
     height: 426px;
     border-radius: 8px;
     gap: 40px;
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
     align-items: center;
     position: relative;
+    padding: 20px;
 }
 
 
 .skill-card{
   margin: auto;
-  height: 356px;
+  height: auto;
 }
 
 .skill-table {
@@ -412,8 +426,8 @@ footer {
   position: absolute;
   bottom: 0;
   right: 20%;
-  display: flex; /* フレックスコンテナを作成 */
-  justify-content: center; /* テキストを水平方向に中央配置 */
+  display: flex;
+  justify-content: center;
   align-items: center;
 
 }
@@ -478,7 +492,7 @@ tbody{
   width: 234px;
   height: 48px;
   border-radius: 4px;
-  margin: 20px 0; /* 上下のマージンを追加 */
+  margin: 20px 0;
 
 }
 
