@@ -1,21 +1,20 @@
 
   html {
-    font-size: 62.5%;
-    position: relative;
-    padding-bottom: 40px;
-    box-sizing: border-box;
-    width: 1440px;
+    height: 1500px;
+
   }
 
   body{
     margin: 0;
+    padding: 0;
+    height: 100%;
   }
 
 /*ヘッダー*/
 
 header {
 
-  width: 100%;
+  width: 1440px;
   height: 120px;
   background-color: #1B5678;
   position: relative;
@@ -62,10 +61,8 @@ footer {
   background-color: #1B5678;
   color: #FFFFFF;
   height: 40px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  width: 1440px;
+  position: sticky;
   text-align: center;
   font-size: 18px;
   justify-content: center;
@@ -73,6 +70,9 @@ footer {
 }
 
 
+main{
+  height: 100%
+}
 
 /*ログイン画面*/
 
@@ -122,6 +122,7 @@ footer {
   bottom: 0;
   right: 20%;
   font-size: 18px;
+  border:none;
 }
 
 .input-underline{
@@ -144,9 +145,6 @@ footer {
 
 /*全体*/
 
-.main{
-  height: 1400px;
-}
 
 .show{
   width: 1440px;
