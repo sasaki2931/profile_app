@@ -47,7 +47,7 @@ class SkillsController < ApplicationController
    @skill = Skill.find(params[:id])
    @skill.destroy
    redirect_to edit_skill_path
-   flash[:success] = "#{@skill.name}の削除しまいした"
+   flash[:success] = "#{@skill.name}を削除しました"
   end
 
   private
