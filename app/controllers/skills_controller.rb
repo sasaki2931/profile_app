@@ -17,7 +17,8 @@ class SkillsController < ApplicationController
       flash[:success] = "#{@skill.category.name}に#{@skill.name}を習得レベル#{@skill.level}で追加しました！"
       redirect_to edit_skill_path(@skill)
     else
-      render :new
+
+      redirect_to new_skill_path(category_id: @category_id)
     end
    end
 
@@ -36,11 +37,9 @@ class SkillsController < ApplicationController
     if @skill.update(update_params)
       flash[:success] = "#{@skill.name}の習得レベルを保存しました！"
       redirect_to edit_skill_path
-
     else
       flash[:danger] = "習得レベル保存に失敗しました"
       render :edit
-
     end
   end
 

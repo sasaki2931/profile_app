@@ -1,13 +1,11 @@
 
-
-html {
+  html {
     font-size: 62.5%;
     position: relative;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    min-height: 100vh;
 
-  }
-
-  body {
-    margin:0;
   }
 
 /*ヘッダー*/
@@ -67,7 +65,6 @@ footer {
   right: 0;
   text-align: center;
   font-size: 18px;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -143,6 +140,11 @@ footer {
 }
 
 /*全体*/
+
+.main{
+  height: 1400px;
+}
+
 .show{
   width: 1440px;
   height: 811px;
@@ -335,7 +337,7 @@ footer {
 
 .skill-container {
     width: 960px;
-    height: 1599px;
+    height: 1512px;
     gap: 80px;
     margin: auto;
 
@@ -346,14 +348,14 @@ footer {
 .skill-category {
     border: 1px solid black;
     width: 960px;
-    height: 426px;
+    height: 356px;
     border-radius: 8px;
     gap: 40px;
-    margin-top: 40px;
     display: flex;
     align-items: center;
     position: relative;
-    padding: 20px;
+    padding: 40px;
+    margin-top: 40px;
 }
 
 
@@ -364,9 +366,9 @@ footer {
 
 .skill-table {
     width: 880px;
-    height: auto;
+    height: 276px;
     border-collapse: collapse;
-    margin: auto;
+    margin-bottom: 20px;
 }
 
 .skill-table-head{
@@ -451,7 +453,6 @@ tbody{
 .skill-table td {
     border: none;
     text-align: center;
-    height: 70px;
 }
 
 
@@ -632,3 +633,4 @@ select{
   font-size: 18px;
   list-style: none;
 }
+

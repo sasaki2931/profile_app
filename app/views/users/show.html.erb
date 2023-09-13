@@ -1,81 +1,83 @@
-<div class = "show">
-  <div class ="image">
-　  <p>
-      <% if @user.image.present? %>
-  　　    <%= image_tag @user.image.url,class: "rounded-circle", size: "360x360" %>
-　    <% else %>
-        <%= image_tag "gray.jpg",class: "rounded-circle", size: "360x360" %>
-　    <% end %>
-    </p>
-  </div>
+<div class = "main">
+  <div class = "show">
+    <div class ="image">
+　    <p>
+        <% if @user.image.present? %>
+  　　      <%= image_tag @user.image.url,class: "rounded-circle", size: "360x360" %>
+　      <% else %>
+          <%= image_tag "gray.jpg",class: "rounded-circle", size: "360x360" %>
+　      <% end %>
+      </p>
+    </div>
 
-  <div class="profile">
-    <h1>自己紹介</h1>
-    <div class="user-info">
-      <p><%= @user.introduce %></p>
-      <td><%= button_to "自己紹介を編集する", edit_user_path(@user),method: :get,class: "edit-button" %></td>
+    <div class="profile">
+      <h1>自己紹介</h1>
+      <div class="user-info">
+        <p><%= @user.introduce %></p>
+        <td><%= button_to "自己紹介を編集する", edit_user_path(@user),method: :get,class: "edit-button" %></td>
+      </div>
+    </div>
+
+    <div class = "skill">
+      <div class = "skill-body">
+        <div class = "skill-head">
+          <h2>スキルチャート</h2>
+　      </div>
+　      <td><%= button_to "スキルを編集する", edit_skill_path(@user),method: :get,class: "edit-skill-button" %></td>
+      </div>
     </div>
   </div>
 
-  <div class = "skill">
-    <div class = "skill-body">
-      <div class = "skill-head">
-        <h2>スキルチャート</h2>
-　    </div>
-　    <td><%= button_to "スキルを編集する", edit_skill_path(@user),method: :get,class: "edit-skill-button" %></td>
-    </div>
-  </div>
-</div>
+
+  <div class="chart-container">
+    <canvas id="barChart"></canvas>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let barCtx = document.getElementById("barChart");
 
 
-<div class="chart-container">
-  <canvas id="barChart"></canvas>
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    let barCtx = document.getElementById("barChart");
+      let frontendData = <%= @frontend_data.to_json.html_safe %>;
+      let backendData = <%= @backend_data.to_json.html_safe %>;
+      let infraData = <%= @infra_data.to_json.html_safe %>;
 
-    // データベースから取得したデータをJavaScriptの変数に埋め込む
-    let frontendData = <%= @frontend_data.to_json.html_safe %>;
-    let backendData = <%= @backend_data.to_json.html_safe %>;
-    let infraData = <%= @infra_data.to_json.html_safe %>;
+      let months = ['先々月', '先月', '今月'];
+      console.log(infraData);
+      console.log(backendData);
+      console.log(frontendData)
 
-    let months = ['先々月', '先月', '今月'];
-    console.log(infraData);
-     console.log(backendData);
-     console.log(frontendData)
-
-    let barConfig = {
-      type: 'bar',
-      data: {
-        labels: months,
-        datasets: [{
-          label: 'フロントエンド',
-          data: frontendData,
-        　backgroundColor: 'rgba(244, 180, 196, 0.9)'
-        }, {
-          label: 'バックエンド',
-          data: backendData,
-          backgroundColor: 'rgba(244, 212, 172, 0.9)'
-        }, {
-          label: 'インフラ',
-          data: infraData,frontendData,
-          backgroundColor: 'rgba(251, 228, 180, 0.9)'
-        }],
-      },
-      options: {
-        scales: {
-          y: {
-            display: true,
-            beginAtZero: true,
-            suggestedMin: 0,
-            suggestedMax: 100,
-            stepSize: 20
+      let barConfig = {
+        type: 'bar',
+        data: {
+          labels: months,
+          datasets: [{
+            label: 'フロントエンド',
+            data: frontendData,
+        　   backgroundColor: 'rgba(244, 180, 196, 0.9)'
+          }, {
+            label: 'バックエンド',
+            data: backendData,
+            backgroundColor: 'rgba(244, 212, 172, 0.9)'
+          }, {
+            label: 'インフラ',
+            data: infraData,frontendData,
+            backgroundColor: 'rgba(251, 228, 180, 0.9)'
+          }],
+        },
+        options: {
+          scales: {
+            y: {
+              display: true,
+              beginAtZero: true,
+              suggestedMin: 0,
+              suggestedMax: 100,
+              stepSize: 20
+            },
           },
         },
-      },
-    };
+      };
 
-    let barChart = new Chart(barCtx, barConfig);
-  });
-</script>
+      let barChart = new Chart(barCtx, barConfig);
+    });
+  </script>
+  </div>
 </div>
