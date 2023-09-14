@@ -152,6 +152,7 @@ main{
   width: 100px;
   height: 43px;
   border-radius: 4px ;
+
 }
 
 /*全体*/
@@ -205,6 +206,7 @@ main{
   height: 45px;
   margin-left: 0;
   margin-top: 20px;
+  border:none;
 }
 
 .profile p{
@@ -269,6 +271,7 @@ main{
   margin:auto;
   border-radius: 4px;
   color:#FFF;
+  border:none;
 }
 
 /*スキルグラフ*/
@@ -300,6 +303,7 @@ main{
   height: 53px;
   padding: 16px 80px 16px 80px;
   border-radius: 4px;
+  border:none;
 }
 
 .text-area{
@@ -443,6 +447,7 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
+  border:none;
 
 }
 
@@ -483,6 +488,7 @@ tbody{
   font-size: 14px;
   line-height: 32px;
   cursor: pointer;
+  border:none;
 }
 
 .delete-button{
@@ -496,6 +502,7 @@ tbody{
   font-size: 14px;
   line-height: 32px;
   cursor: pointer;
+  border:none;
 
 }
 
@@ -506,6 +513,7 @@ tbody{
   height: 48px;
   border-radius: 4px;
   margin: 20px 0;
+  border:none;
 
 }
 
@@ -568,6 +576,7 @@ select{
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
+  border:none;
 }
 
 
@@ -627,6 +636,7 @@ select{
   margin:auto;
   border-radius: 4px;
   color:#FFF;
+  border:none;
 }
 
 .custom-select {
