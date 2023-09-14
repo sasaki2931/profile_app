@@ -1,24 +1,35 @@
 
-  html {
-    height: 1500px;
+  html, body {
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
 
-  }
+main {
+  width: 1440px;
+  min-height: 1000px;
+}
 
-  body{
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-
-/*ヘッダー*/
 
 header {
-
   width: 1440px;
   height: 120px;
   background-color: #1B5678;
   position: relative;
+}
 
+/*フッター*/
+
+footer {
+  background-color: #1B5678;
+  color: #FFFFFF;
+  height: 40px;
+  width: 1440px;
+  position: sticky;
+  text-align: center;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo{
@@ -55,26 +66,29 @@ header {
 }
 
 
-/*フッター*/
 
-footer {
-  background-color: #1B5678;
-  color: #FFFFFF;
-  height: 40px;
-  width: 1440px;
-  position: sticky;
-  text-align: center;
-  font-size: 18px;
-  justify-content: center;
-  align-items: center;
-}
-
-
-main{
-  height: 100%
-}
 
 /*ログイン画面*/
+
+.user-center{
+  height:245px;
+  position: absolute;
+  width: 480px;
+  top: 328px;
+  left: 480px;
+  position: relative;
+}
+
+.user-login-title{
+  position: absolute;
+  width: 144px;
+  height: 48px;
+  top: 200px;
+  left: 648px;
+  font-size:36px;
+}
+
+
 
 
 .flash-area{
@@ -84,23 +98,6 @@ main{
   font-size: 18px;
 }
 
-.title {
-  margin-right: auto;
-  color: #FFFFFF;
-  padding-left: 20px;
-  font-size:30px;
-}
-
-
-.form-body{
-  height:245px;
-  width:480px;
-  position: absolute;
-  Top :338px;
-  Left:480px;
-  Gap:48px;
-
-}
 
 
 
@@ -158,11 +155,18 @@ main{
 /*全体*/
 
 
+.show-all{
+  width:  1440px;
+  height: 1300px;
+  position: relative;
+}
+
 .show{
-  width: 1440px;
   height: 811px;
   position: relative;
 }
+
+
 
 /*画像部*/
 .image{
@@ -281,6 +285,7 @@ main{
   width: 1081px;
   top:877px;
   left:193px;
+
 }
 
 
@@ -305,7 +310,6 @@ main{
   width: 960px;
   top: 328px;
   left: 240px;
-  position: relative;
 
 }
 

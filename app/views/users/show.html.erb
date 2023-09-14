@@ -1,5 +1,6 @@
 
-  <div class = "show">
+  <div class = "show-all">
+    <div class ="show">
     <div class ="image">
 　    <p>
         <% if @user.image.present? %>
@@ -26,6 +27,7 @@
 　      <td><%= button_to "スキルを編集する", edit_skill_path(@user),method: :get,class: "edit-skill-button" %></td>
       </div>
     </div>
+  </div>
   </div>
 
 

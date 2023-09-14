@@ -1,6 +1,6 @@
-<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-  <div class = "center">
-    <div class ="center-inner">
+<%= form_with(scope: :session, url: sessions_path, local: true ,class: "user-center") do |f| %>
+  <div class = "user-inner">
+    <div class ="user-text-area">
       <div class = "filed">
         <%= f.label :メールアドレス %>
         <%= f.email_field :email, class: "input-underline",id: 'session_email' %>
