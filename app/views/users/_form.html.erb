@@ -1,6 +1,5 @@
 
-<%= form_with(model: @user,url: user_path(@user), local: true) do |f| %>
-  <div class = "center">
+<%= form_with(model: @user,url: user_path(@user), local: true,class: "center") do |f| %>
     <div class ="user-inner">
       <div class = "text-area">
         <%= f.label :自己紹介文 %><br>
@@ -11,15 +10,16 @@
 
       <div class="image-area">
         <%= f.label :"アバター画像",class:"image-area-label" %><br>
-        <%= f.label :image, class: "custom-file-label" do %>
-        <span>画像ファイルを添付する</span>
+        <div class ="custom-file-area">
+          <%= f.label :image, class: "custom-file-label" do %>
+          <span>画像ファイルを添付する</span>
+        </div>
         <%= f.file_field :image, class: "custom-file-input" %>
       　<% end %>
       </div>
+      <div class ="actions">
+       <%= f.submit "自己紹介を確定する",class:"user-edit-button" %>
+      </div>
     </div>
-    <div class ="actions">
-      <%= f.submit "自己紹介を確定する",class:"user-edit-button" %>
-    </div>
-  </div>
 <% end %>
 
