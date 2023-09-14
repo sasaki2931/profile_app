@@ -315,6 +315,10 @@ main{
 
 }
 
+.text-area label{
+  color: rgba(0, 0, 0, 0.54);
+}
+
 .text-area-input{
   width: 100%;
   border: none;
@@ -324,6 +328,10 @@ main{
 
 }
 
+.center p{
+  color: rgba(0, 0, 0, 0.54);
+}
+
 .image-area{
   height: 48px;
   width: 480px;
@@ -331,6 +339,10 @@ main{
   margin: auto;
   text-align: left;
   margin-top: 50px;
+}
+
+.image-area-label{
+  color: rgba(0, 0, 0, 0.54);
 }
 
 
