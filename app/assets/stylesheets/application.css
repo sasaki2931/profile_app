@@ -5,16 +5,30 @@
   width: 1440px;
 }
 
+main {
+  width: 1440px;
+  min-height: 1000px;
+}
+
 @media screen and (min-width: 1441px) {
+  /* HTML要素とボディ要素の幅を100%に設定 */
   html, body {
     width: 100%;
   }
+
+  /* main要素のマージンを中央寄せに設定 */
+  main {
+    position: relative;
+    margin: auto;
+  }
 }
 
-main {
-  width: 100%;
-  min-height: 1000px;
+@media screen and (min-height: 1360px) {
+  html,body,main{
+    height: 100%;
+  }
 }
+
 
 
 header {
