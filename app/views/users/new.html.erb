@@ -1,0 +1,17 @@
+<%= form_with(model: @user,url: user_path(@user), local: true,class: "center") do |f| %>
+    <div class = "user-inner">
+      <div class ="user-text-area">
+        <div class = "filed">
+          <%= f.label :メールアドレス %>
+          <%= f.email_field :email, class: "input-underline",id: 'session_email' %>
+      </div>
+      <div class = "filed">
+        <p> <%= f.label :パスワード %></p>
+        <p> <%= f.password_field :password, class: "input-underline",id: 'session_password' %></p>
+      </div>
+    </div>
+    <div class ="actions">
+      <%= f.submit "登録する",class:"submit-button" %>
+    </div>
+  </div>
+<% end %>

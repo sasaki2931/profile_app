@@ -15,8 +15,8 @@ aws = infra.skills.create(name: 'AWS', level: 35,created_at: Time.new(2023, 9, 1
 user = User.create!(
   name: "Example User",
   email: "example@railstutorial.org",
-  password: "foobar",
-  password_confirmation: "foobar",
+  password: "password1",
+  password_confirmation: "password1",
   introduce: "自己紹介が入ります,自己紹介が入ります、自己紹介が入ります、自己紹介が入ります、自己紹介が入ります、自己紹介が入ります、自己紹介がはいり時ます、自己紹介が入ります"
 )
 
