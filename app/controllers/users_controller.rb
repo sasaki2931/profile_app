@@ -8,12 +8,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
     if @user.save
       redirect_to user_path(@user.id)
     else
-      flash[:success] = "ユーザーが作成されました。"
+      flash[:success] = "ユーザーの作成に失敗しました。"
       render :new
+      puts @user.errors.full_messages
+      binding.pry
     end
   end
 
@@ -54,7 +56,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,
+      params.require(:user).permit(:id,:name, :email, :password,
                                  :password_confirmation,:image,:image_cache,:introduce)
     end
 

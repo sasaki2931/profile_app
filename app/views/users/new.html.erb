@@ -1,5 +1,5 @@
-<h1 class ="login-title">新規登録</h1>
-<%= form_with(model: @user, local: true,class: "center") do |f| %>    
+<h1 class ="user-new-title">新規登録</h1>
+<%= form_with(model: @user, local: true,class: "new-user-center") do |f| %>    
     <div class = "user-inner">
       <div class ="user-text-area">
         <div class = "filed">
@@ -14,5 +14,7 @@
     <div class ="actions">
       <%= f.submit "登録する",class:"submit-button" %>
     </div>
+    <%= f.hidden_field :name, value: "gest" %>
+    <%= f.hidden_field :introduce, value: "サンプル" * 13 %>
   </div>
 <% end %>
