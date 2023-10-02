@@ -12,10 +12,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user.id)
     else
-      flash[:success] = "ユーザーの作成に失敗しました。"
+      flash.now[:danger] = 'ユーザーの作成に失敗しました'
       render :new
-      puts @user.errors.full_messages
-      binding.pry
     end
   end
 
