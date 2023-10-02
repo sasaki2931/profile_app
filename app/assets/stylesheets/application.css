@@ -111,6 +111,7 @@ footer {
   top: 200px;
   left: 648px;
   font-size: 36px;
+  font-weight: normal;
 }
 
 
@@ -202,6 +203,7 @@ footer {
   top: 200px;
   left: 648px;
   font-size: 36px;
+  font-weight: normal;
 }
 
 
@@ -436,6 +438,8 @@ footer {
   height: 48px;
   top: 200px;
   left: 558px;
+  font-size: 36px;
+  font-weight: normal;
 }
 
 .center {
@@ -775,6 +779,7 @@ select {
   height: 48px;
   top: 200px;
   left: 469px;
+  font-weight: normal;
 }
 
 .skill-new-body {
