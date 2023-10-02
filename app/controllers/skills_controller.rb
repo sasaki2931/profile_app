@@ -24,7 +24,9 @@ class SkillsController < ApplicationController
 
 
   def edit
-    @categories = Category.all
+    @user = current_user
+    @user_skills = @user.skills.includes(:category)
+    @categories = @user_skills.map(&:category).uniq
     @frontend = Category.find_by(name: "フロントエンド")&.skills
     @backend = Category.find_by(name: "バックエンド")&.skills
     @infra = Category.find_by(name: "インフラ")&.skills
