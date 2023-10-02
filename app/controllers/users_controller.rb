@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to user_path(@user.id)
+      binding.pry
     else
       flash.now[:danger] = 'ユーザーの作成に失敗しました'
       render :new
@@ -39,22 +40,27 @@ class UsersController < ApplicationController
     @infra_data = [@i_june_data,@i_july_data,@i_august_data]
   end
 
+  def edit
+    
+  end
+
   def update
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
+      @errors = @user.errors.full_messages
+      flash.now[:danger] = '自己紹介の作成に失敗しました'
       render :edit
     end
   end
 
-  def edit
-  end
+  
 
 
     private
 
     def user_params
-      params.require(:user).permit(:id,:name, :email, :password,
+      params.require(:user).permit(:name, :email, :password,
                                  :password_confirmation,:image,:image_cache,:introduce)
     end
 

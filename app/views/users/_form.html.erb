@@ -1,5 +1,4 @@
-
-<%= form_with(model: @user,url: user_path(@user), local: true,class: "center") do |f| %>
+<%= form_with(model: @user,url: user_path(@user), local: true,class: "center",method: :patch) do |f| %>
     <div class ="user-inner">
       <div class = "text-area">
         <%= f.label :自己紹介文 %><br>
