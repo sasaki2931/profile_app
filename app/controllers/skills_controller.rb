@@ -27,10 +27,27 @@ class SkillsController < ApplicationController
     @user = current_user
     @user_skills = @user.skills.includes(:category)
     @categories = @user_skills.map(&:category).uniq
-    @frontend = Category.find_by(name: "フロントエンド")&.skills
-    @backend = Category.find_by(name: "バックエンド")&.skills
-    @infra = Category.find_by(name: "インフラ")&.skills
+    if @user_skills.empty?
+      frontend_category = Category.create(name: "フロントエンド")
+      backend_category = Category.create(name: "バックエンド")
+      infra_category = Category.create(name: "インフラ")
+  
+      frontend_skill = Skill.create(name: "サンプルスキル1", level: 0, category: frontend_category)
+      backend_skill = Skill.create(name: "サンプルスキル2", level: 0, category: backend_category)
+      infra_skill = Skill.create(name: "サンプルスキル3", level: 0, category: infra_category)
+  
+      @user.skills << frontend_skill
+      @user.skills << backend_skill
+      @user.skills << infra_skill
+  
+      @user_skills = @user.skills.includes(:category)
+    end
+  
+    @frontend = @user_skills.where(category: frontend_category)
+    @backend = @user_skills.where(category: backend_category)
+    @infra = @user_skills.where(category: infra_category)
   end
+  
 
 
   def update
