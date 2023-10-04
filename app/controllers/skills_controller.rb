@@ -25,9 +25,7 @@ class SkillsController < ApplicationController
 
   def edit
     @user = current_user
-    @user_skills = @user.skills.includes(:category)
-    @categories = @user_skills.map(&:category).uniq
-    if @user_skills.empty?
+    if @user.skills.empty?
       frontend_category = Category.create(name: "フロントエンド")
       backend_category = Category.create(name: "バックエンド")
       infra_category = Category.create(name: "インフラ")
@@ -41,8 +39,10 @@ class SkillsController < ApplicationController
       @user.skills << infra_skill
   
       @user_skills = @user.skills.includes(:category)
+    else
+      @user_skills = @user.skills.includes(:category)
     end
-  
+    @categories = @user_skills.map(&:category).uniq
     @frontend = @user_skills.where(category: frontend_category)
     @backend = @user_skills.where(category: backend_category)
     @infra = @user_skills.where(category: infra_category)
