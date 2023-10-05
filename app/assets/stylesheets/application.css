@@ -352,6 +352,7 @@ footer {
 .profile p {
   font-size: 18px;
   color: rgba(0, 0, 0, 0.75);
+  word-break: break-all
 }
 
 .user-info {
